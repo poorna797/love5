@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Story Reader</title>
+    <link href='https://fonts.googleapis.com/css?family=Mukta' rel='stylesheet'>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            max-width: 700px;
+            min-height: 700px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-sizing:border-box;
+           box-shadow: 0px 10px 20px 5px rgba(160, 248, 248, 0.7);
+            /* box-shadow: 0px 10px 20px 2px rgba(8, 7, 7, 0.1); */
+        }
+
+        h1 {
+            font-size: 24px;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        button {
+            /* display: none; */
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            /* justify-content: flex-start; */
+            /* cursor: pointer; */
+            /* float: inline-end; */
+
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+        #text{
+            font-size: 20px;
+            line-height: 2.5;
+            min-height: 100%;
+            min-width: 100%;
+            border: 0px solid;
+            font-family: 'Mukta';
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <!-- STORY TITLE -->
+        <h1>Moonlit Promises</h1>
+    </header>
+    <main>
+       <nav> <h1>Chapter 1</h1></nav>
+        <div id="text"></div>
+        <!-- <footer><button id="next-button">Next Chapter</button></footer> -->
+    </main>
+
+    <script>
+       
+        
+        const textElement = document.getElementById("text");
+        const text = `
+
+        In the coastal village of Azure Bay, where the waves sang lullabies to the moonlit shores, lived a young woman named Isabella. She had an enchanting way of capturing the essence of the ocean in her poems, each word a gentle ripple echoing the depth of her soul. Isabella found solace in the ebb and flow of the tide, and her heart yearned for a love as vast and uncharted as the sea.
+
+One summer night, during a village festival that painted the streets with colors and laughter, Isabella's gaze met that of a mysterious stranger named Lucas. With eyes as deep as the ocean itself, Lucas approached her, drawn by the magnetic pull of shared destinies. They danced beneath the moonlit sky, and in the silence between their heartbeats, a connection bloomed like a rare blossom in the night.
+
+Lucas, a sailor with tales of distant lands and uncharted territories, found a kindred spirit in Isabella. She, in turn, saw in him the embodiment of the vastness and mystery she so adored in the ocean. As their hearts entwined, they made promises beneath the moon—promises to explore the uncharted waters of love, to weather storms together, and to find beauty in the quiet moments between the waves.
+
+Days turned into nights, and Isabella and Lucas navigated the seas of life hand in hand. They faced challenges with the resilience of a ship sailing through rough waters, and celebrated triumphs with the joyous abandon of seagulls soaring high above the cliffs. Love, like a compass, guided them through the uncharted territories of their shared journey.
+
+One evening, as the moon hung low in the sky, casting a silvery glow over Azure Bay, Lucas took Isabella to a secluded cove. Beneath a canopy of stars, he unfolded a map—a map of their shared dreams, etched with the coordinates of the moments that defined their love. In that quiet sanctuary, Lucas dropped to one knee and, with a heart full of courage and love, asked Isabella to be his first mate for life.
+
+Under the moonlit sky, Isabella whispered her heartfelt "yes," sealing their promise with the salt-kissed breeze and the rhythmic lullaby of the waves. In that moment, Azure Bay bore witness to a love as boundless as the ocean, as timeless as the tides that had brought them together.
+
+And so, in the coastal village of Azure Bay, where love stories were woven into the fabric of the sea, Isabella and Lucas's love became a legend—a tale of moonlit promises, shared adventures, and a bond that could weather the vastness of any storm.
+
+`;
+        let index = 0;
+
+        function type() {
+          if (index < text.length) {
+            textElement.innerHTML += text.charAt(index);
+            index++;
+            setTimeout(type, 80);
+          }
+        }
+        type();
+        // if(type()){
+       
+        // }
+    </script>
+</body>
+</html>
